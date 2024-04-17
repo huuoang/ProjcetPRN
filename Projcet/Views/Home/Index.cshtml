@@ -1,0 +1,121 @@
+﻿<!-- Hero Section Begin -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero-text">
+                    <h1> A Luxury Hotel</h1>
+                    <p>
+                        Here are the best hotel booking sites, including recommendations
+                        for international travel and for finding low-priced hotel rooms.
+                    </p>
+                    <a href="Room?page=1" class="primary-btn">Discover Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item"
+             style="background-image: url(/Assets/img/hero/hero-1.jpg)"></div>
+        <div class="hs-item"
+             style="background-image: url(/Assets/img/hero/hero-2.jpg)"></div>
+        <div class="hs-item"
+             style="background-image: url(/Assets/img/hero/hero-3.jpg)"></div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<!-- About Us Section Begin -->
+<section class="aboutus-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-text">
+                    <div class="section-title">
+                        <span>About Us</span>
+                        <h2>Intercontinental LA <br />Westlake Hotel</h2>
+                    </div>
+                    <p class="f-para">
+                        Sona.com is a leading online accommodation site. We’re
+                        passionate about travel. Every day, we inspire and reach
+                        millions of travelers across 90 local websites in 41 languages.
+                    </p>
+                    <p class="s-para">
+                        So when it comes to booking the perfect hotel, vacation rental,
+                        resort, apartment, guest house, or tree house, we’ve got you
+                        covered.
+                    </p>
+                    <a  class="primary-btn about-btn">Welcome to paradise</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-pic">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="/Assets/img/about/about-1.jpg" alt="" />
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="/Assets/img/about/about-2.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us Section End -->
+<!-- Home Room Section Begin -->
+<section class="hp-room-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>What We Do</span>
+                    <h2>Discover Our Services</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="hp-room-items">
+            <div class="row">
+                @foreach (var item in ViewBag.RoomTypes)
+                {
+                        <div class="col-lg-3 col-md-6">
+                            <div class="hp-room-item set-bg"
+                                 data-setbg="@item.Image">
+                                <div class="hr-text">
+                                    <h3>@item.Name</h3>
+                                    <h2>@item.Price$<span>/Pernight</span></h2>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="r-o">Size:</td>
+                                                <td>@item.Acreage m<sup>2</sup></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Capacity:</td>
+                                                <td>Max @item.Capacity people</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Beds:</td>
+                                                <td>@item.Beds</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Services:</td>
+                                                <td>Wifi, Television, Bathroom,...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="/Room?page=1&roomType=@item.TypeId" class="primary-btn">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<!-- Testimonial Section End -->

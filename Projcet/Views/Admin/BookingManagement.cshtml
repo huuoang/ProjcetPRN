@@ -1,0 +1,286 @@
+@{
+    Layout = "_EmptyLayout";
+}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+          content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Booking List Management</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/Admin Assets/plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="/Admin Assets/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        /* Modal styles */
+        .modal .modal-dialog {
+            max-width: 400px;
+        }
+
+        .modal .modal-header, .modal .modal-body, .modal .modal-footer {
+            padding: 20px 30px;
+        }
+
+        .modal .modal-content {
+            border-radius: 3px;
+        }
+
+        .modal .modal-footer {
+            background: #ecf0f1;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .modal .modal-title {
+            display: inline-block;
+        }
+
+        .modal .form-control {
+            border-radius: 2px;
+            box-shadow: none;
+            border-color: #dddddd;
+        }
+
+        .modal textarea.form-control {
+            resize: vertical;
+        }
+
+        .modal .btn {
+            border-radius: 2px;
+            min-width: 100px;
+        }
+
+        .modal form label {
+            font-weight: normal;
+        }
+
+        .room-pagination {
+    border-left: 1px solid transparent; /* Remove border from left side */
+    border-right: 1px solid transparent; /* Remove border from right side */
+    border-bottom: 1px solid #ccc; /* Keep border at the bottom */
+    padding: 10px; /* Add padding for better spacing */
+    margin-bottom: 20px; /* Add margin to create some separation */
+    display: inline-block; /* Ensures the pagination section behaves like a block element */
+}
+
+.room-pagination a {
+    text-decoration: none; /* Remove default underline */
+    margin: 0 5px; /* Add some margin between links */
+    padding: 5px 10px; /* Add padding to links */
+    border: 1px solid #ccc; /* Add border to links */
+    border-radius: 3px; /* Optional: Add rounded corners to links */
+}
+
+.room-pagination a:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+            background-color: #f0f0f0; /* Change background color on hover */
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">
+
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                       href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <div style="width:72%"></div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav d-none d-md-block d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
+                               href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Admin/AdminDashboard"
+                               aria-expanded="false">
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Admin/UserManagement"
+                               aria-expanded="false">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Users Management</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Admin/RoomManagement"
+                               aria-expanded="false">
+                                <i class="fas fa-bed" aria-hidden="true"></i>
+                                <span class="hide-menu">Rooms Management</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Admin/BookingManagement"
+                               aria-expanded="false">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                                <span class="hide-menu">Booking Management</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Account/logout"
+                               aria-expanded="false">
+                                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                                <span class="hide-menu">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </aside>
+        <div class="page-wrapper">
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Booking Management</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <div class="row">
+                                <h3 class="col-sm-10 box-title">Booking list</h3>
+                                <div class="col-sm-2">
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">Booking ID</th>
+                                            <th class="border-top-0">User ID</th>
+                                            <th class="border-top-0">Room ID</th>
+                                            <th class="border-top-0">Booking Date</th>
+                                            <th class="border-top-0">Date Booked From</th>
+                                            <th class="border-top-0">Number of people</th>
+                                            <th class="border-top-0">Total</th> 
+                                             <th class="border-top-0">Custommer</th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in ViewBag.BookingList)
+                                        {
+                                            <tr>
+                                                <td>@item.BookingId</td>
+                                                <td>@item.UserId</td>
+                                                <td>@item.RoomId</td>
+                                                <td>@item.BookingDate.ToShortDateString()</td>
+                                                <td>@item.DateFrom.ToShortDateString() to @item.DateTo.ToShortDateString()</td>
+                                                <td>@item.People</td>
+                                                <td>@item.Total $</td>
+                                                <td>@item.User.Name</td>
+                                            </tr>                                          
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="room-pagination">
+                            <a href="?page=@(ViewBag.CurrentPage == 1 ? 1 : ViewBag.CurrentPage-1)">
+                                <span>Previous</span>
+                            </a>
+                                                @for (var i = 1; i <= ViewBag.Pages; i++)
+                                                {
+                                    <a href="?page=@i">@i</a>
+                                                }
+                            <a href="?page=@(ViewBag.CurrentPage == ViewBag.Pages ? ViewBag.Pages : ViewBag.CurrentPage+1)">
+                                <span>Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+               
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="/Admin Assets/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/Admin Assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/Admin Assets/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="/Admin Assets/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="/Admin Assets/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="/Admin Assets/js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "_EmptyLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+
+    <link rel="stylesheet"
+          href="/login Assets/fonts/material-icon/css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" href="/login Assets/vendor/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/login Assets/css/style.css" />
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <h1>Register Form</h1>
+                    <h3>@ViewBag.error</h3>
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">Your name</label>
+                                <input type="text"
+                                       class="form-input"
+                                       name="name"
+                                       id="first_name" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group form-icon">
+                                <label for="birth_date">Birth date</label>
+                                <input type="date"
+                                       class="form-input"
+                                       name="dob"
+                                       
+                                       placeholder="MM-DD-YYYY" />
+                            </div>
+                            <div class="form-radio">
+                                <label for="gender">Gender</label>
+                                <div class="form-flex">
+                                    <input type="radio"
+                                           name="gender"
+                                           value="male"
+                                           id="male"
+                                           checked="checked" />
+                                    <label for="male">Male</label>
+
+                                    <input type="radio"
+                                           name="gender"
+                                           value="female"
+                                           id="female" />
+                                    <label for="female">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone_number">Phone number</label>
+                            <input type="number"
+                                   class="form-input"
+                                   name="phone"
+                                   id="phone_number" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email"
+                                   class="form-input"
+                                   name="email"
+                                   id="email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text"
+                                   class="form-input"
+                                   name="username"
+                                   id="username" />
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password"
+                                       class="form-input"
+                                       name="password"
+                                       id="password" />
+                            </div>
+                            <div class="form-group">
+                                <label for="re_password">Repeat your password</label>
+                                <input type="password"
+                                       class="form-input"
+                                       name="rePassword"
+                                       id="re_password" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p>Have an account? Login <a href="/account/login">here</a></p>
+                            <input type="submit"
+                                   name="submit"
+                                   id="submit"
+                                   class="form-submit"
+                                   value="Submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- JS -->
+    <script src="/login Assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/login Assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/login Assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/login Assets/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="/login Assets/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
